@@ -1,0 +1,74 @@
+# Ignore node_modules directory in frontend
+/frontend/node_modules/
+
+# Ignore build artifacts in frontend (optional)
+/frontend/build/
+/frontend/dist/
+/frontend/out/
+/frontend/.next/
+/frontend/.nuxt/
+/frontend/.cache/
+/frontend/.svelte/
+
+# Ignore build artifacts in backend (adjust if necessary)
+/backend/build/
+/backend/dist/
+
+# Ignore hidden files and directories
+/*~
+.*.swp
+.DS_Store
+
+# Ignore logs
+/log/
+*.log
+
+# Ignore IDE/Editor specific files and directories
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore compiled files
+*.pyc
+*.pyo
+
+# Ignore Python cache directories
+__pycache__/
+
+# Ignore dependency lock files (adjust based on your setup)
+package-lock.json
+yarn.lock
+
+# Ignore environment configuration files (adjust if necessary)
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+
+# Ignore compiled binary files (adjust as per your needs)
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Ignore database files
+*.sqlite
+*.db
+
+# Ignore archive files
+*.zip
+*.tar.gz
+*.rar
+
+# Ignore temporary files
+*.tmp
+*.bak
+
+# Ignore Python virtual environments in backend
+/backend/.venv/
+/backend/venv/
+/backend/env/
+
