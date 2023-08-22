@@ -1,3 +1,13 @@
+/* Bahiana */
+@import url('https://fonts.googleapis.com/css2?family=Bahiana&display=swap');
+/* Overpass */
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,300;1,100;1,300&display=swap');
+/* Overpass Mono */
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400&display=swap');
+/* Lato */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

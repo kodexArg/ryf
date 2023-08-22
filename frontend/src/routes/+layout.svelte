@@ -1,11 +1,67 @@
 <script>
-  import "../app.css"
+	import '../app.css';
+	import { onMount } from 'svelte';
+	import Footer from '../components/Footer.svelte';
+	import Navbar from '../components/Navbar.svelte';
+
+	onMount(() => {
+		// Wait for the initial render. SetTimeout used just in case I go for asyncronous components
+		setTimeout(() => {
+			const img = new Image();
+			img.src = '/assets/bg/full.jpg';
+
+			img.onload = () => {
+				const bgDiv = document.querySelector('.bg-div');
+				bgDiv.style.backgroundImage = `url(${img.src})`;
+				console.log("full background loaded :)")
+			};
+		}, 0);
+	});
 </script>
 
-<slot class="w-full h-full"/>
+<section class="background-image">
+	<div class="bg-div"></div>
+	<Navbar />
+	<div class="content">
+		<slot />
+	</div>
+	<Footer />
+</section>
 
 <style lang="postcss">
-  :global(html) {
-    background-color: #f2f2f2;
-  }
+	:global(html),
+	:global(body) {
+		@apply h-full m-0;
+	}
+
+	section {
+		@apply flex flex-col h-screen relative;
+	}
+
+	.content {
+		@apply flex-grow overflow-y-auto;
+	}
+
+	:global(html) {
+		@apply font-overpass;
+	}
+
+	.bg-div {
+		@apply absolute inset-0 bg-no-repeat bg-cover bg-center;
+		background-image: url('/assets/bg/min.jpg');
+		opacity: 0.25; 
+		z-index: -1;
+	}
+
+	.background-image::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -2;
+		/* background: linear-gradient(#647055, #292929); */
+		@apply bg-gradient-to-b from-primary-500 to-primary-900;
+	}
 </style>
