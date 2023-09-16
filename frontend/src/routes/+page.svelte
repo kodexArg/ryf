@@ -1,7 +1,13 @@
 <script>
-	import Main from '../components/Main.svelte';
+	import Characters from '../components/Characters.svelte';
 </script>
 
-<!-- Content -->
-<Main/>
-<!-- End Content -->
+<main>
+	<Characters />
+</main>
+
+<style lang="postcss">
+	main {
+		@apply w-full h-full flex justify-center items-center;
+	}
+</style>

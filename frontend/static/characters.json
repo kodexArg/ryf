@@ -1,0 +1,55 @@
+{
+  "characters": [
+    {
+      "firstName": "Claudia",
+      "lastName": "Moreno",
+      "age": 30,
+      "mainOccupation": "Guardiana de la Muralla",
+      "secondaryOccupation": "Sastre",
+      "bio": "Claudia Moreno es una mujer de aspecto serio que reside en el barrio bohemio de San Telmo, Buenos Aires. Siempre viste un pulóver negro y lleva gafas de sol, lo que le da un aire francés. Es la guardiana de la muralla y también una sastre talentosa que repara y crea ropa para los residentes. Su seriedad y habilidades la convierten en una figura respetada en la comunidad.",
+      "location": "En el barrio bohemio de San Telmo, Buenos Aires",
+      "portrait": "1.jpg"
+    },
+    {
+      "firstName": "Alejandro",
+      "lastName": "García",
+      "age": 24,
+      "mainOccupation": "Tatuador",
+      "secondaryOccupation": "Explorador",
+      "bio": "Alejandro García, completamente tatuado y siempre vestido con una camiseta negra, es un explorador y tatuador de la zona industrial de Córdoba. Su cuerpo es un lienzo de su arte y sus experiencias, y utiliza sus habilidades para marcar a los miembros de la comunidad con símbolos significativos.",
+      "location": "En la zona industrial de Córdoba",
+      "portrait": "2.jpg"
+    },
+    {
+      "firstName": "Padre Ernesto",
+      "lastName": "López",
+      "age": 60,
+      "mainOccupation": "Sacerdote",
+      "secondaryOccupation": "Consejero",
+      "bio": "Padre Ernesto es un sacerdote de aspecto severo que vive en la zona religiosa de Mendoza. Siempre lleva su collar clerical blanco, aunque está bastante sucio. Es el consejero espiritual de la comunidad y su expresión seria, a veces enojada, refleja las tensiones y desafíos que enfrenta la ciudad.",
+      "location": "En la zona religiosa de Mendoza",
+      "portrait": "3.jpg"
+    },
+    {
+      "firstName": "Isabella",
+      "lastName": "Martínez",
+      "age": 32,
+      "mainOccupation": "Monja",
+      "secondaryOccupation": "Médica",
+      "bio": "Isabella Martínez es una mujer hermosa de unos 30 años que reside en la zona médica de Rosario. Siempre viste un vestido blanco y lleva un anillo grande y llamativo. Aunque es monja, también ejerce como médica y su expresión tranquila ofrece un sentido de paz a aquellos que la rodean.",
+      "location": "En la zona médica de Rosario",
+      "portrait": "4.jpg"
+    },
+    {
+      "firstName": "Camila",
+      "lastName": "Gutiérrez",
+      "age": 25,
+      "mainOccupation": "Levantadora de Pesas",
+      "secondaryOccupation": "Cazadora",
+      "bio": "Camila Gutiérrez es una joven musculosa que vive en la zona deportiva de La Plata. Viste pantalones cortos que parecen una extensión de su piel y siempre está lista para un desafío físico. Es una levantadora de pesas y cazadora, y su fuerza y habilidades la convierten en una de las mejores cazadoras de la comunidad.",
+      "location": "En la zona deportiva de La Plata",
+      "portrait": "5.jpg"
+    }
+    
+  ]
+}

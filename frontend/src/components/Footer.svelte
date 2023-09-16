@@ -1,16 +1,29 @@
 <script>
-	import { Footer, FooterCopyright, FooterLinkGroup, FooterLink } from 'flowbite-svelte';
-	import { DarkMode } from 'flowbite-svelte';
-	import { Icon } from 'flowbite-svelte-icons';
+	import { GithubSolid, EnvelopeSolid } from 'flowbite-svelte-icons';
 </script>
 
-<Footer class="rounded-none bg-primary-50 !py-1">
-	<FooterCopyright href="https://github.com/kodexArg" by="kodexArg" year={2023} copyrightMessage="MIT License"/>
-	<FooterLinkGroup ulClass="flex flex-wrap text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
-    <FooterLink href="https://github.com/kodexArg" target="_blank"><Icon name="github-solid" /></FooterLink>
-		<FooterLink href="mailto:kodexarg@gmail.com?subject=[Subordinación y Valor]" target="_blank">
-      <Icon name="envelope-solid" />
-		</FooterLink>
-    <DarkMode btnClass=""/>
-	</FooterLinkGroup>
-</Footer>
+<footer>
+	<a href="https://github.com/kodexArg/ryf">©️2023 kodexArg</a>
+	<address>
+		<a href="https://github.com/kodexArg/ryf" target="_blank">
+			<GithubSolid size="xs" />
+		</a>
+		<a href="mailto:kodexarg@gmail.com" target="_blank">
+			<EnvelopeSolid size="xs" />
+		</a>
+	</address>
+</footer>
+
+<style lang="postcss">
+	footer {
+		@apply flex justify-between px-3 p-0.5 bg-primary-900 bg-opacity-50 border-t-2 border-primary-900 drop-shadow-xl;
+	}
+
+	address {
+		@apply font-overpass flex space-x-2;
+	}
+
+	a {
+		@apply text-primary-200 text-xs hover:text-white;
+	}
+</style>

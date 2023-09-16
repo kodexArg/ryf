@@ -5,7 +5,6 @@
 	import Navbar from '../components/Navbar.svelte';
 
 	onMount(() => {
-		// Wait for the initial render. SetTimeout used just in case I go for asyncronous components
 		setTimeout(() => {
 			const img = new Image();
 			img.src = '/assets/bg/full.jpg';
@@ -38,8 +37,8 @@
 		@apply flex flex-col h-screen relative;
 	}
 
-	.content {
-		@apply flex-grow overflow-y-auto;
+  .content {
+		@apply flex-grow overflow-y-auto text-justify;
 	}
 
 	:global(html) {
@@ -49,7 +48,7 @@
 	.bg-div {
 		@apply absolute inset-0 bg-no-repeat bg-cover bg-center;
 		background-image: url('/assets/bg/min.jpg');
-		opacity: 0.25; 
+		opacity: 0.2; 
 		z-index: -1;
 	}
 
