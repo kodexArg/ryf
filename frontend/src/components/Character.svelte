@@ -3,35 +3,21 @@
 	export let character;
 
 	let enlarged = false;
-	let currentClass = 'reduced';
-	let center;
+	let card;
 
-	function zoom() {
-		enlarged = !enlarged;
-		currentClass = enlarged ? 'enlarged' : 'reduced';
-
-		// if (enlarged && center) {
-		// 	setTimeout(() => {
-		// 		center.style.transform = 'translateX(0)';
-		// 		const viewportWidth = window.innerWidth;
-		// 		const rect = center.getBoundingClientRect();
-		// 		let distanceToCenter = viewportWidth / 2 - (rect.left + rect.width / 2);
-		// 		distanceToCenter += distanceToCenter < 0 ? 180 : 80;
-
-		// 		center.style.transform = `translateX(${distanceToCenter}px)`;
-		// 	}, 1000);
-		// } else {
-		// 	center.style.transform = 'translateX(0)';
-		// }
-	}
 </script>
 
 {#if enlarged}
-	<div class="overlay" />
+	<div class="overlay" 
+	     on:click={() => (enlarged = false)} 
+	     on:keydown={(e) => e.key === 'Enter' && (enlarged = false)} 
+	     role="button" 
+	     tabindex=-1
+	/>
 {/if}
 
-<article class={currentClass} on:dblclick={zoom}>
-	<div bind:this={center} class="card {currentClass}">
+<article class:enlarged class:reduced={!enlarged} on:dblclick={() => (enlarged = !enlarged)} >
+	<div class="card" class:enlarged={enlarged} class:reduced={!enlarged} class:centered={enlarged} bind:this={card}>
 		<div class="card-image" style="--img-url: url('/characters/{character.portrait}')">
 			<div class="over-image">
 				<div class="name">
@@ -56,8 +42,9 @@
 </article>
 
 <style lang="postcss">
+
 	.card {
-		@apply select-none;
+		@apply select-none cursor-pointer;
 		@apply flex flex-col w-[200px] relative mb-8;
 		@apply bg-primary-900 rounded-xl;
 		@apply transition duration-500;
@@ -66,7 +53,7 @@
 	}
 
 	.enlarged {
-		@apply transition ease-in-out duration-700;
+		@apply transition ease-in-out duration-300;
 		@apply z-50 scale-[115%] sm:scale-110 -translate-y-6 sm:-translate-y-2 translate-x-16;
 	}
 
@@ -83,20 +70,43 @@
 		@apply fixed -left-20 inset-0 bg-primary-900 opacity-50 z-30;
 	}
 
-	article:not(:last-child):not(.enlarged) .card:hover {
-		@apply translate-x-16 z-50;
+	.centered {
+		@apply transition ease-in-out delay-100 duration-500 -translate-x-4;
+		@apply bg-red-500;
+
 	}
 
-	article:last-child .card:hover {
-		@apply z-50;
-	}
+	/* looks like a :has :not tutorial... let's comment this nightmare for the Gabriel of the future: */
+	/* the items are rendering from back to front using flex-row-reverse in the Characters.svelte component, so last-child is actually the first element at left of the screen... and this is important! */
 
+	/* marging for all but first element */
 	article:not(:last-child) {
 		@apply -ml-16;
 	}
 
+	/* HOVER! (except first element, except if already zoomed) */
+	article:not(:last-child):not(.enlarged) .card:hover {
+		@apply translate-x-16;
+	}
+
+	/* first sibiling displacement (except for 2nd element) (used to be ":has(+ article:hover):not(:has(+ article:last-child))" but we're overwritting it anways) */
 	:has(+ article:hover) {
-		@apply translate-x-5;
+		@apply translate-x-12;
+	}
+
+	/* first sibiling is second element displacement */
+	:has(+ article:hover):has(+ article:last-child) {
+		@apply translate-x-6;
+	}
+
+	/* second sibiling displacement */
+	:has(+ * + article:hover) {
+		@apply translate-x-6;
+	}
+
+	/* second sibiling is third element displacement (overwrite previous)*/
+	:has(+ * + article:hover):has(+ * + article:last-child) {
+		@apply translate-x-4;
 	}
 
 	article:last-child {

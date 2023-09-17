@@ -12,7 +12,7 @@
 </script>
 
 <section>
-	<div class="custom-carousel">
+	<div class="custom-carousel" >
 		{#each characters as character, index}
 		<Character {character} {index} />
 		{/each}
