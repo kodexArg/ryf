@@ -1,55 +1,156 @@
 {
   "characters": [
     {
+      "title": "",
       "firstName": "Claudia",
       "lastName": "Moreno",
       "age": 30,
-      "mainOccupation": "Guardiana de la Muralla",
-      "secondaryOccupation": "Sastre",
-      "bio": "Claudia Moreno es una mujer de aspecto serio que reside en el barrio bohemio de San Telmo, Buenos Aires. Siempre viste un pulóver negro y lleva gafas de sol, lo que le da un aire francés. Es la guardiana de la muralla y también una sastre talentosa que repara y crea ropa para los residentes. Su seriedad y habilidades la convierten en una figura respetada en la comunidad.",
-      "location": "En el barrio bohemio de San Telmo, Buenos Aires",
-      "portrait": "1.jpg"
+      "mainOccupation": "Sastre",
+      "secondaryOccupation": "Criminal",
+      "faction": "Trabajadores",
+      "bio": "Claudia Moreno, una mujer de rostro severo, reside en la Zona Obrera de Ciudad Dársena. Su taller de costura es una fachada para su verdadero oficio: la tortura y el asesinato por encargo.",
+      "location": "Zona Obrera, Ciudad Dársena",
+      "portrait": "1.jpg",
+      "stats": {
+        "physique": 3,
+        "intellect": 2,
+        "ability": 5,
+        "empathy": 1
+      },
+      "secret": "Tomó su apellido de una de sus primeras víctimas en otra provincia."
     },
     {
+      "title": "",
       "firstName": "Alejandro",
       "lastName": "García",
       "age": 24,
       "mainOccupation": "Tatuador",
-      "secondaryOccupation": "Explorador",
-      "bio": "Alejandro García, completamente tatuado y siempre vestido con una camiseta negra, es un explorador y tatuador de la zona industrial de Córdoba. Su cuerpo es un lienzo de su arte y sus experiencias, y utiliza sus habilidades para marcar a los miembros de la comunidad con símbolos significativos.",
-      "location": "En la zona industrial de Córdoba",
-      "portrait": "2.jpg"
+      "secondaryOccupation": "Criminal",
+      "faction": "Parias",
+      "bio": "Alejandro García, tatuado de pies a cabeza, vive en la Zona Industrial de Ciudad Dársena. Sus tatuajes ocultan símbolos oscuros que le otorgan poderes prohibidos.",
+      "location": "Zona Industrial, Ciudad Dársena",
+      "portrait": "2.jpg",
+      "stats": {
+        "physique": 4,
+        "intellect": 1,
+        "ability": 4,
+        "empathy": 1
+      },
+      "secret": "Está investigando secretamente sobre rituales oscuros y magia prohibida."
     },
     {
-      "firstName": "Padre Ernesto",
+      "title": "Padre",
+      "firstName": "Ernesto",
       "lastName": "López",
       "age": 60,
       "mainOccupation": "Sacerdote",
-      "secondaryOccupation": "Consejero",
-      "bio": "Padre Ernesto es un sacerdote de aspecto severo que vive en la zona religiosa de Mendoza. Siempre lleva su collar clerical blanco, aunque está bastante sucio. Es el consejero espiritual de la comunidad y su expresión seria, a veces enojada, refleja las tensiones y desafíos que enfrenta la ciudad.",
-      "location": "En la zona religiosa de Mendoza",
-      "portrait": "3.jpg"
+      "secondaryOccupation": "",
+      "faction": "Clero",
+      "bio": "Padre Ernesto, de rostro severo, vive en la Nueva Catedral de San Pedro en Ciudad Dársena. Su devoción esconde un deseo de poder que va más allá de lo divino.",
+      "location": "Nueva Catedral de San Pedro, Ciudad Dársena",
+      "portrait": "3.jpg",
+      "stats": {
+        "physique": 1,
+        "intellect": 4,
+        "ability": 2,
+        "empathy": 3
+      },
+      "secret": "Trabaja para la oficina clerical como espía, recopilando información sobre herejes y disidentes."
     },
     {
+      "title": "",
       "firstName": "Isabella",
       "lastName": "Martínez",
       "age": 32,
-      "mainOccupation": "Monja",
-      "secondaryOccupation": "Médica",
-      "bio": "Isabella Martínez es una mujer hermosa de unos 30 años que reside en la zona médica de Rosario. Siempre viste un vestido blanco y lleva un anillo grande y llamativo. Aunque es monja, también ejerce como médica y su expresión tranquila ofrece un sentido de paz a aquellos que la rodean.",
-      "location": "En la zona médica de Rosario",
-      "portrait": "4.jpg"
+      "mainOccupation": "Enfermera",
+      "secondaryOccupation": "",
+      "faction": "Clero",
+      "bio": "Isabella Martínez, de apariencia angelical, trabaja en la Zona Médica de Ciudad Dársena. Su belleza esconde una frialdad que utiliza para experimentar con pacientes.",
+      "location": "Zona Médica, Ciudad Dársena",
+      "portrait": "4.jpg",
+      "stats": {
+        "physique": 2,
+        "intellect": 3,
+        "ability": 4,
+        "empathy": 5
+      },
+      "secret": "Ha estado experimentando con métodos de tortura y técnicas de interrogatorio en nombre de la iglesia."
     },
     {
+      "title": "",
       "firstName": "Camila",
       "lastName": "Gutiérrez",
       "age": 25,
-      "mainOccupation": "Levantadora de Pesas",
-      "secondaryOccupation": "Cazadora",
-      "bio": "Camila Gutiérrez es una joven musculosa que vive en la zona deportiva de La Plata. Viste pantalones cortos que parecen una extensión de su piel y siempre está lista para un desafío físico. Es una levantadora de pesas y cazadora, y su fuerza y habilidades la convierten en una de las mejores cazadoras de la comunidad.",
-      "location": "En la zona deportiva de La Plata",
-      "portrait": "5.jpg"
+      "mainOccupation": "Gendarme",
+      "secondaryOccupation": "",
+      "faction": "Militar",
+      "bio": "Camila Gutiérrez, de cuerpo musculoso, reside en la Zona Militar de Ciudad Dársena. Su lealtad al régimen esconde una sed de sangre que sacia en las calles por la noche.",
+      "location": "Zona Militar, Ciudad Dársena",
+      "portrait": "5.jpg",
+      "stats": {
+        "physique": 5,
+        "intellect": 2,
+        "ability": 1,
+        "empathy": 1
+      },
+      "secret": "Caza ciudadanos corruptos por su cuenta y los mata, considerándolo un servicio a la patria."
+    },
+    {
+      "title": "",
+      "firstName": "Lara",
+      "lastName": "Vega",
+      "age": 22,
+      "mainOccupation": "Salvaje",
+      "secondaryOccupation": "",
+      "faction": "Salvajes",
+      "bio": "Lara Vega, una joven audaz, vive en las tierras baldías fuera de Ciudad Dársena. Su destreza para sobrevivir esconde un deseo de venganza contra aquellos que destruyeron su hogar.",
+      "location": "Tierras Baldías, afueras de Ciudad Dársena",
+      "portrait": "6.jpg",
+      "stats": {
+        "physique": 5,
+        "intellect": 1,
+        "ability": 4,
+        "empathy": 2
+      },
+      "secret": "Está recolectando información sobre los líderes militares de Ciudad Dársena para un ataque vengativo."
+    },
+    {
+      "title": "",
+      "firstName": "Carlos",
+      "lastName": "Díaz",
+      "age": 40,
+      "mainOccupation": "Cloaquero",
+      "secondaryOccupation": "",
+      "faction": "Trabajadores",
+      "bio": "Carlos Díaz, de mirada astuta, vive en las alcantarillas de Ciudad Dársena. Su trabajo le permite moverse por la ciudad sin ser detectado, recolectando secretos y chantajeando a los poderosos.",
+      "location": "Alcantarillas, Ciudad Dársena",
+      "portrait": "7.jpg",
+      "stats": {
+        "physique": 3,
+        "intellect": 1,
+        "ability": 4,
+        "empathy": 3
+      },
+      "secret": "Es un espía para los militares, informando sobre las actividades subversivas en las alcantarillas."
+    },
+    {
+      "title": "Profesor",
+      "firstName": "Alberto",
+      "lastName": "Ramírez",
+      "age": 70,
+      "mainOccupation": "Político",
+      "secondaryOccupation": "Profesor",
+      "faction": "Clero",
+      "bio": "Profesor Alberto, un hombre mayor, vive en la Zona Educativa de Ciudad Dársena. Su aparente sabiduría oculta una ambición desmedida por el poder y el control.",
+      "location": "Zona Educativa, Ciudad Dársena",
+      "portrait": "8.jpg",
+      "stats": {
+        "physique": 1,
+        "intellect": 5,
+        "ability": 2,
+        "empathy": 4
+      },
+      "secret": "Ha estado manipulando los currículos educativos para adoctrinar a las nuevas generaciones según su visión del mundo."
     }
-    
   ]
 }

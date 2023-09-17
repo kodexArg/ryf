@@ -7,8 +7,8 @@
 		<button>
 			<svg
 				class="m-auto"
-				width="28"
-				height="28"
+				width="36"
+				height="36"
 				viewBox="0 0 60 60"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
@@ -30,11 +30,11 @@
 	}
 
 	nav {
-		@apply p-0 m-0 flex justify-between;
+		@apply p-0 m-0 flex justify-between z-40;
 		@apply bg-black;
 	}
 
 	h1 {
-		@apply text-3xl font-bahiana text-primary-400;
+		@apply text-4xl font-bahiana text-primary-400;
 	}
 </style>
