@@ -1,13 +1,3 @@
-<script>
-	import Characters from '../components/Characters.svelte';
-</script>
-
 <main>
-	<Characters />
+ <a href="/characters/">Personajes</a>	
 </main>
-
-<style lang="postcss">
-	main {
-		@apply w-full h-full flex justify-center items-center;
-	}
-</style>

@@ -1,34 +1,61 @@
 <script>
-	import { onMount } from 'svelte';
-	import Character from './Character.svelte';
+	import { onMount, afterUpdate } from 'svelte';
+	import Card from './Card.svelte';
 	let characters = [];
 
-	onMount(async () => {
+	// card function generator
+	function delay(ms) {
+		return new Promise(resolve => setTimeout(resolve, ms));
+	}
+
+	async function* fetchCharacters() {
 		const response = await fetch('/characters.json');
 		const data = await response.json();
-		characters = data.characters;
+		for (const character of data.characters) {
+			yield character;
+			await delay(100); 
+		}
+	}
+
+	onMount(async () => {
+		for await (const character of fetchCharacters()) {
+			characters = [...characters, character];
+		}
+
 	});
-	
+
+	afterUpdate(() => {
+		if (characters.length > 0) {
+			const customCarousel = document.querySelector('.custom-carousel');
+			const newScrollPosition = -customCarousel.clientWidth;
+			customCarousel.scrollTo({
+				left: newScrollPosition,
+				behavior: 'smooth'
+			});
+		}
+	});
+
 </script>
 
 <section>
-	<div class="custom-carousel" >
-		{#each characters as character, index}
-		<Character {character} {index} />
+	<div class="custom-carousel">
+		{#each characters as character}
+		<div></div>
+			<Card {character}/>
 		{/each}
 	</div>
 </section>
 
 <style lang="postcss">
 	section {
-		@apply w-full h-full overflow-x-hidden z-0 mb-32 sm:mb-0;
+		@apply w-full h-full overflow-x-hidden z-0;
 	}
 
 	.custom-carousel {
 		@apply w-full h-full flex overflow-x-scroll overflow-y-hidden pt-4 touch-pan-x;
 		@apply flex-row-reverse items-end pl-12 pr-32;
+		transition: all;
 	}
-
 
 	/* TODO: Firefox doesn't work with webkit */
 	::-webkit-scrollbar {

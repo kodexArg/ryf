@@ -29,16 +29,29 @@
 
 <style lang="postcss">
 	:global(html),
+
+	:global(:focus) {
+  	outline: none;
+    box-shadow: none;
+	  -webkit-tap-highlight-color: transparent;
+
+	}
+
 	:global(body) {
 		@apply h-full m-0;
 	}
 
+	
 	section {
 		@apply flex flex-col h-screen relative;
 	}
 
   .content {
 		@apply flex-grow overflow-y-auto text-justify;
+	}
+
+	:global(main) {
+		@apply w-full h-full flex justify-center items-center;
 	}
 
 	:global(html) {
