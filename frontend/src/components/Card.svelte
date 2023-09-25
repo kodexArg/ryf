@@ -16,7 +16,7 @@
 					enlarged = false;
 				} else {
 				}
-			}, 250); // delay to check for double click
+			}, 500); // delay to check for double click
 		}
 	}
 
@@ -42,7 +42,8 @@
 {/if}
 
 <article class:enlarged class:reduced={!enlarged}>
-	<div
+	<card
+		data-sveltekit-preload-data="character"
 		class="card"
 		class:enlarged
 		class:reduced={!enlarged}
@@ -75,7 +76,7 @@
 				<PowerBar stat={key} number={value} />
 			{/each}
 		</div>
-	</div>
+	</card>
 </article>
 
 <style lang="postcss">
@@ -116,11 +117,10 @@
 
 	.centered {
 		@apply transition ease-in-out delay-100 duration-500 -translate-x-4;
-		@apply bg-red-500;
 	}
 
 	article:not(:last-child) {
-		@apply -ml-16;
+		@apply -ml-10;
 	}
 
 	article:last-child {
@@ -132,23 +132,19 @@
 
 	/* HOVER! (focus!) */
 	article:not(:last-child):not(.enlarged) .card:hover {
-		@apply translate-x-16;
-	}
-
-	/* first sibiling displacement */
-	article:has(+ article:hover) {
 		@apply translate-x-12;
 	}
-
+	
+	/* first sibiling displacement */
+	article:has(+ * + article:hover) {
+		@apply translate-x-8;
+	}
+	
 	/* first sibiling is second element displacement (overwrite) */
-	article:has(+ article:hover):has(+ article:last-child) {
+	article:has(+ * + article:hover):has(+ * + article:last-child) {
 		@apply translate-x-4;
 	}
-
-	/* second sibiling is third element displacement (overwrite) */
-	:has(+ * + article:hover):has(+ * + article:last-child) {
-		@apply translate-x-2;
-	}
+	
 
 	/* card picture */
 	.card-image {

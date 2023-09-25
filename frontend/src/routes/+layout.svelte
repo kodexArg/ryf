@@ -12,7 +12,6 @@
 			img.onload = () => {
 				const bgDiv = document.querySelector('.bg-div');
 				bgDiv.style.backgroundImage = `url(${img.src})`;
-				console.log("full background loaded :)")
 			};
 		}, 0);
 	});
