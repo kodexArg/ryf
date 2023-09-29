@@ -1,4 +1,4 @@
-import nesting from '@tailwindcss/nesting'
+import nesting from 'postcss-nesting'
 import tailwind from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
 

@@ -27,7 +27,7 @@
 		"flowbite": "^1.8.1",
 		"flowbite-svelte": "^0.44.17",
 		"flowbite-svelte-icons": "^0.4.4",
-		"postcss-nested": "^6.0.1",
-		"tailwind-merge": "^1.14.0"
+		"postcss-nesting": "^12.0.1",
+		"svelte-preprocess": "^5.0.4"
 	}
 }

@@ -132,17 +132,17 @@
 
 	/* HOVER! (focus!) */
 	article:not(:last-child):not(.enlarged) .card:hover {
-		@apply translate-x-12;
+		@apply translate-x-12 duration-700 delay-200;
 	}
 	
 	/* first sibiling displacement */
 	article:has(+ * + article:hover) {
-		@apply translate-x-8;
+		@apply translate-x-8 duration-700 delay-200;
 	}
 	
 	/* first sibiling is second element displacement (overwrite) */
 	article:has(+ * + article:hover):has(+ * + article:last-child) {
-		@apply translate-x-4;
+		@apply translate-x-4 duration-700 delay-200;
 	}
 	
 
