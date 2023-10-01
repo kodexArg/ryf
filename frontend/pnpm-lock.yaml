@@ -22,7 +22,7 @@ dependencies:
     version: 12.0.1(postcss@8.4.29)
   svelte-preprocess:
     specifier: ^5.0.4
-    version: 5.0.4(postcss@8.4.29)(svelte@4.2.0)
+    version: 5.0.4(postcss-load-config@4.0.1)(postcss@8.4.29)(svelte@4.2.0)
 
 devDependencies:
   '@sveltejs/adapter-auto':
@@ -43,6 +43,9 @@ devDependencies:
   postcss-cli:
     specifier: ^10.1.0
     version: 10.1.0(postcss@8.4.29)
+  postcss-load-config:
+    specifier: ^4.0.1
+    version: 4.0.1(postcss@8.4.29)
   svelte:
     specifier: ^4.0.5
     version: 4.2.0
@@ -1364,7 +1367,7 @@ packages:
       svelte: 4.2.0
     dev: true
 
-  /svelte-preprocess@5.0.4(postcss@8.4.29)(svelte@4.2.0):
+  /svelte-preprocess@5.0.4(postcss-load-config@4.0.1)(postcss@8.4.29)(svelte@4.2.0):
     resolution: {integrity: sha512-ABia2QegosxOGsVlsSBJvoWeXy1wUKSfF7SWJdTjLAbx/Y3SrVevvvbFNQqrSJw89+lNSsM58SipmZJ5SRi5iw==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
@@ -1406,6 +1409,7 @@ packages:
       detect-indent: 6.1.0
       magic-string: 0.27.0
       postcss: 8.4.29
+      postcss-load-config: 4.0.1(postcss@8.4.29)
       sorcery: 0.11.0
       strip-indent: 3.0.0
       svelte: 4.2.0

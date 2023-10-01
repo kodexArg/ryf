@@ -8,7 +8,6 @@
 {#if data}
   <section
     in:fly={{ y: 600, delay: 500, duration: 1000 }}
-    out:fly={{ y: -200, duration: 500 }}
   >
     <div class="container">
       <div class="pane title-pane">
@@ -66,7 +65,6 @@
       -2px 2px 0 #000, 2px 2px 0 #000;
   }
 
-
   img {
     @apply w-[280px] aspect-[0.625] relative;
     @apply rounded-xl bg-cover object-cover;
@@ -106,7 +104,7 @@
   .secret,
   article {
     @apply w-72 md:w-full flex-shrink;
-  } 
+  }
 
   .bio div,
   .secret div {
@@ -122,5 +120,5 @@
 
   .secret div {
     @apply text-primary-200 bg-primary-500 bg-opacity-75;
-  } 
+  }
 </style>

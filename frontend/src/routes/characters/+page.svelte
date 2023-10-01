@@ -19,17 +19,6 @@
     }
   }
 
-  function runOutroAnimation(node, { duration }) {
-    return {
-      duration,
-      css: (t) => {
-        let brightness = (1 - t) * 20;
-				if (brightness < 1) { brightness = 1 }
-        return `filter: brightness(${brightness}) saturate(${t})`;
-      },
-    };
-  }
-
   onMount(async () => {
     // scroll with the wheel
     customCarousel.addEventListener("wheel", function (e) {
@@ -57,10 +46,7 @@
   });
 </script>
 
-<section
-  in:fly={{ y: -300, duration: 500 }}
-  out:runOutroAnimation={{ duration: 700 }}
->
+<section in:fly={{ y: -300, duration: 500 }}>
   <div class="custom-carousel" bind:this={customCarousel}>
     {#each characters as character}
       <div />
@@ -73,7 +59,6 @@
   section {
     @apply w-full h-full overflow-x-hidden z-0;
   }
-
 
   .custom-carousel {
     @apply w-full h-full flex overflow-x-scroll overflow-y-hidden pt-4 touch-pan-x;
