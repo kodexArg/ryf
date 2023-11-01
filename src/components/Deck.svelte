@@ -2,8 +2,10 @@
 	import { onMount, afterUpdate } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import { expoIn } from 'svelte/easing';
+	import Card from './Card.svelte';
 
 	let customCarousel;
+	let characters = []
 
 	async function* fetchCharacters() {
 		function delay(ms) {
@@ -11,6 +13,7 @@
 		}
 		const response = await fetch('/characters.json');
 		const data = await response.json();
+		console.log(data)
 		for (const character of data.characters) {
 			yield character;
 			await delay(100);
@@ -42,12 +45,11 @@
 		}
 	});
 </script>
-
 <section out:fly={{ y: 1000, duration: 400, easing: expoIn }}>
 	<div class="custom-carousel" bind:this={customCarousel}>
 		{#each characters as character}
 			<div />
-			<!-- <Card {character} /> -->
+			<Card {character} />
 		{/each}
 	</div>
 </section>
