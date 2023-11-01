@@ -1,72 +1,90 @@
 <script>
   import { fly } from "svelte/transition";
+  import { expoOut } from "svelte/easing";
+  import SkillBar from "$lib/SkillBar.svelte";
 
   export let data;
   data = data.props.character;
+  
 </script>
 
-{#if data}
-  <section
-    in:fly={{ y: 600, delay: 500, duration: 1000 }}
-  >
-    <div class="container">
-      <div class="pane title-pane">
-        <h1>
-          {#if data.title}
-            {data.title}
-          {/if}
-        </h1>
-        <h1>
-          {data.firstName}
-          {data.lastName}
-        </h1>
+<main in:fly={{ y: 600, delay: 500, duration: 1000, easing: expoOut }}>
+
+  <section>
+    <img src="/characters/{data.portrait}" alt={data.portrait} />
+  </section>
+  
+  <section>
+    <div class="character-name">
+      <div>
+        {#if data.title}{data.title}{/if}
       </div>
-      <div class="pane left-pane">
-        <img src="/characters/{data.portrait}" alt={data.portrait} />
-        <h2>
-          {data.mainOccupation}
-          {#if data.secondaryOccupation}/{data.secondaryOccupation}{/if} ({data.age})
-        </h2>
-      </div>
-      <div class="pane right-pane">
-        <article class="bio">
-          <h2>Bio</h2>
-          <div>{@html data.bio}</div>
-        </article>
-        <article class="secret">
-          <h2>Secreto</h2>
-          <div>{@html data.secret}</div>
-        </article>
+      <div>
+        {data.firstName}
+        {data.lastName}
       </div>
     </div>
+    <div class="character-ocupation">
+      {data.mainOccupation}{#if data.secondaryOccupation}/{data.secondaryOccupation}{/if}
+      ({data.age})
+    </div>
   </section>
-{:else}
-  <p>Loading...</p>
-{/if}
+
+  <section>
+    <div class="character-skills">
+      {#each Object.entries(data.stats) as [key, value]}
+        <SkillBar stat={key} number={value} />
+      {/each}
+    </div>
+  </section>
+
+  <section>
+    <details>
+      <summary>BIOGRAFÍA</summary>
+      <div class="typewriter-text">{@html data.bio}</div>
+    </details>
+  </section>
+
+  <section>
+    <details>
+      <summary>SECRETO</summary>
+      <div class="typewriter-text">{@html data.secret}</div>
+    </details>
+  </section>
+
+</main>
 
 <style lang="postcss">
+
+  main {
+    @apply w-min p-3 sm:p-6;
+    @apply flex flex-col sm:flex-wrap gap-4;
+    @apply items-start justify-start;
+  }
+
   section {
-    @apply select-none;
-    @apply flex px-4 py-2;
+    @apply w-[320px];
   }
 
-  .container {
-    @apply px-4 py-2;
-    @apply grid;
-  }
-
-  .title-pane {
-    @apply w-full;
-    @apply flex space-x-3;
-    @apply sm:flex-row sm:space-x-3;
-    @apply font-bahiana text-white text-[3.2rem] font-bold tracking-wider leading-none;
+  .character-name {
+    @apply font-bahiana text-white text-4xl font-bold tracking-wider leading-none;
     -webkit-text-stroke: 0.1px black;
     text-shadow: 4px 4px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
       -2px 2px 0 #000, 2px 2px 0 #000;
   }
 
+  .character-ocupation {
+    @apply font-overpass-mono text-lg text-primary-100 ml-4;
+    @apply overline;
+  }
+
+  .character-skills {
+    @apply bg-primary-100 rounded-xl border-2 border-primary-900 p-2;
+    @apply shadow-lg shadow-primary-900;
+  }
+
   img {
-    @apply w-[280px] aspect-[0.625] relative;
+    @apply w-[320px] aspect-[0.625] -z-10;
     @apply rounded-xl bg-cover object-cover;
     @apply flex overflow-hidden;
     @apply filter contrast-[120%];
@@ -74,51 +92,17 @@
       17px 17px 0 -7px rgb(0, 0, 0, 0.25);
   }
 
-  .left-pane {
-    @apply max-w-sm mb-10;
-    @apply flex-shrink-0;
+  /* TODO: Accordion animation */
+  summary {
+    @apply p-2 rounded-lg bg-primary-900;
+    @apply font-overpass-mono font-bold tracking-tighter text-primary-300;
+    @apply shadow-lg shadow-primary-900;
   }
 
-  .left-pane h2 {
-    @apply overline pt-5;
-    @apply w-full text-primary-100 text-end mt-1;
-    @apply font-overpass uppercase text-lg leading-none;
-  }
-
-  .right-pane {
-    @apply sm:pl-6;
-    @apply flex flex-col;
-  }
-
-  .right-pane h2 {
-    @apply w-full rounded-t-lg pt-3 pb-1 pl-2;
-    @apply text-primary-200 bg-primary-900;
-    @apply font-overpass leading-none tracking-wider uppercase text-xl;
-  }
-
-  .bio,
-  article {
-    @apply w-72 md:w-full flex-shrink;
-  }
-
-  .secret,
-  article {
-    @apply w-72 md:w-full flex-shrink;
-  }
-
-  .bio div,
-  .secret div {
-    @apply mb-5 px-3 py-2;
-    @apply border-2 border-primary-900;
-    @apply font-overpass-mono leading-tight tracking-tighter text-sm;
-    box-shadow: 17px 17px 0 -7px rgb(0, 0, 0, 0.25);
-  }
-
-  .bio div {
-    @apply text-primary-900 bg-primary-200 bg-opacity-75;
-  }
-
-  .secret div {
-    @apply text-primary-200 bg-primary-500 bg-opacity-75;
+  /* TODO: typewriter effect? */
+  .typewriter-text {
+    @apply max-h-[300px] -mt-2 py-2 px-3 bg-primary-300 overflow-x-hidden overflow-y-auto rounded-b-lg;
+    @apply font-overpass-mono text-sm text-primary-800; 
+    @apply shadow-lg shadow-primary-900;
   }
 </style>

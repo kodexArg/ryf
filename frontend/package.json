@@ -29,6 +29,7 @@
 		"flowbite-svelte": "^0.44.17",
 		"flowbite-svelte-icons": "^0.4.4",
 		"postcss-nesting": "^12.0.1",
-		"svelte-preprocess": "^5.0.4"
+		"svelte-preprocess": "^5.0.4",
+		"svelte-svg": "^0.0.7"
 	}
 }

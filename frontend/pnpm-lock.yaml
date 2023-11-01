@@ -23,6 +23,9 @@ dependencies:
   svelte-preprocess:
     specifier: ^5.0.4
     version: 5.0.4(postcss-load-config@4.0.1)(postcss@8.4.29)(svelte@4.2.0)
+  svelte-svg:
+    specifier: ^0.0.7
+    version: 0.0.7
 
 devDependencies:
   '@sveltejs/adapter-auto':
@@ -1413,6 +1416,10 @@ packages:
       sorcery: 0.11.0
       strip-indent: 3.0.0
       svelte: 4.2.0
+    dev: false
+
+  /svelte-svg@0.0.7:
+    resolution: {integrity: sha512-L1jcV8fTFoBXekJSN7JdTAhctnBz6iQ90RAFEO6HnB2LbWnv1wSFW+yU4Ps1e+ifUit1SFMhkR5tUq2GPQ/muQ==}
     dev: false
 
   /svelte@4.2.0:

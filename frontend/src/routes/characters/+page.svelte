@@ -1,16 +1,17 @@
 <script>
-  import { fly } from "svelte/transition";
   import { onMount, afterUpdate } from "svelte";
+  import { fly } from "svelte/transition";
+  import { expoIn } from 'svelte/easing';
+
   import Card from "@comp/Card.svelte";
   let characters = [];
   let customCarousel;
 
-  // card function generator
-  function delay(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
-
+  // card function generator to render one by one with delay
   async function* fetchCharacters() {
+    function delay(ms) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    }
     const response = await fetch("/characters.json");
     const data = await response.json();
     for (const character of data.characters) {
@@ -46,7 +47,9 @@
   });
 </script>
 
-<section in:fly={{ y: -300, duration: 500 }}>
+<section
+  out:fly={{ y: 1000, duration: 400, easing: expoIn }}
+>
   <div class="custom-carousel" bind:this={customCarousel}>
     {#each characters as character}
       <div />
@@ -55,7 +58,7 @@
   </div>
 </section>
 
-<style lang="postcss">
+<style>
   section {
     @apply w-full h-full overflow-x-hidden z-0;
   }

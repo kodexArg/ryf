@@ -6,9 +6,10 @@
   // Spanish titles
   const statTitles = {
     physique: "Físico",
-    empathy: "Empatía",
     intellect: "Intelecto",
-    ability: "Habilidad"
+    skill: "Habilidad",
+    perception: "Sentidos",
+    empathy: "Empatía",
   };
 </script>
 

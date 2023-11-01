@@ -1,15 +1,15 @@
 <script>
-  import { goto } from "$app/navigation";
   import { fly } from "svelte/transition";
-  import PowerBar from "$lib/PowerBar.svelte";
+  import { goto } from "$app/navigation";
+  import SkillBar from "$lib/SkillBar.svelte";
   export let character;
 
   let clickTimeout;
   let card;
   let enlarged = false;
   let dblclick = false;
+  let flyConfig = { x: 100, y: 500, duration: 400, opacity: 0.9 }; // Default fly config
 
-	// on click, minimize the card
   function handleCardClick() {
     if (enlarged) {
       clickTimeout = setTimeout(() => {
@@ -20,16 +20,15 @@
     }
   }
 
-	// on double click, enlarge the card. If already enlarged, flip it.
-  function handleCardDoubleClick() {
-    if (clickTimeout) clearTimeout(clickTimeout); // prevent single click action
+  async function handleCardDoubleClick() {
+    if (clickTimeout) clearTimeout(clickTimeout);
     if (enlarged) {
-      dblclick = true; 
+      dblclick = true;
+      goto(`/characters/${character.slug}`);
     } else {
       enlarged = true;
     }
   }
-  
 </script>
 
 {#if enlarged}
@@ -44,7 +43,7 @@
 
 <article class:enlarged class:reduced={!enlarged}>
   <card
-    data-sveltekit-preload-data="character"
+    data-sveltekit-preload-data
     class="card"
     class:enlarged
     class:reduced={!enlarged}
@@ -55,13 +54,11 @@
     tabindex="-1"
     role="button"
     on:keydown={(e) => e.key === "Enter" && handleCardDoubleClick()}
-    in:fly={{ x: 100, y: 500, duration: 400, opacity: 90 }}
+    in:fly={flyConfig}
   >
-    <div
-      class="card-image"
-      style="--img-url: url('/characters/{character.portrait}')"
-    >
-      <div class="over-image">
+    <div class="card-image">
+      <img src="/characters/{character.portrait}" alt={character.portrait} />
+      <div class="portrait-box">
         <div class="name">
           {#if character.title}{character.title}<br />{/if}
           {character.firstName}
@@ -77,7 +74,7 @@
 
     <div class="m-2">
       {#each Object.entries(character.stats) as [key, value]}
-        <PowerBar stat={key} number={value} />
+        <SkillBar stat={key} number={value} />
       {/each}
     </div>
   </card>
@@ -87,12 +84,12 @@
   /* TODO: anidation (future) */
   .card {
     @apply select-none;
-    @apply flex flex-col w-[200px] relative mb-8;
+    @apply relative flex flex-col w-[200px] mb-8;
     @apply bg-primary-900 rounded-xl;
     @apply transition duration-500;
     @apply outline outline-2 outline-primary-900;
-    box-shadow: 1rem 1rem 1rem rgb(0, 0, 0, 0.75), 0 0 2rem #000;
     @apply cursor-pointer;
+    box-shadow: 1rem 1rem 1rem rgb(0, 0, 0, 0.75), 0 0 2rem #000;
   }
 
   .enlarged {
@@ -123,6 +120,37 @@
     @apply transition ease-in-out delay-100 duration-500 -translate-x-4;
   }
 
+  /* card picture */
+  .card-image {
+    @apply relative flex w-[200px] aspect-[0.625] overflow-hidden;
+    @apply rounded-t-xl bg-cover;
+    @apply filter contrast-[120%];
+  }
+
+  .card-image img {
+    @apply absolute z-0;
+    @apply w-full aspect-[0.625] object-cover;
+    view-transition-name: portrait;
+  }
+
+  /* text over image */
+  .portrait-box {
+    @apply absolute bottom-0 right-0 z-10;
+  }
+
+  .portrait-box .name {
+    @apply font-bahiana text-primary-50 text-right text-2xl font-bold tracking-wider leading-none pr-3;
+    -webkit-text-stroke: 0.1px black;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+      -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+
+  .portrait-box .subtitle {
+    @apply pt-0.5 pl-2 pr-0.5 mb-1 mt-0.5 rounded-sm;
+    @apply bg-black rounded-l-full bg-opacity-50;
+    @apply font-overpass-mono text-xs tracking-tight leading-none text-primary-50;
+  }
+
   article:not(:last-child) {
     @apply -ml-10;
   }
@@ -147,34 +175,5 @@
   /* first sibiling is second element displacement (overwrite) */
   article:has(+ * + article:hover):has(+ * + article:last-child) {
     @apply translate-x-4 duration-1000 delay-500;
-  }
-
-  /* card picture */
-  .card-image {
-    @apply w-[200px] aspect-[0.625] relative;
-    @apply rounded-t-xl bg-cover;
-    @apply flex overflow-hidden;
-    background-image: var(--img-url);
-    @apply filter contrast-[120%];
-  }
-
-  /* container for text over image */
-  .over-image {
-    @apply bottom-0 right-0 absolute flex flex-col items-end;
-  }
-
-  /* character's name */
-  .over-image .name {
-    @apply font-bahiana text-primary-50 text-right text-2xl font-bold tracking-wider leading-none pr-3;
-    -webkit-text-stroke: 0.1px black;
-    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-      -1px 1px 0 #000, 1px 1px 0 #000;
-  }
-
-  /* profession tag black background */
-  .subtitle {
-    @apply pt-0.5 pl-2 pr-0.5 mb-1 mt-0.5 rounded-sm;
-    @apply font-overpass-mono text-xs tracking-tight leading-none text-primary-50;
-    @apply bg-black rounded-l-full bg-opacity-50;
   }
 </style>

@@ -16,8 +16,8 @@
       "stats": {
         "physique": 3,
         "intellect": 2,
-        "ability": 5,
-        
+        "skill": 5,
+        "perception": 3,
         "empathy": 1
       },
       "secret": "<p>Detrás de los hilos y patrones, el taller alberga una sala secreta donde Claudia se transforma en una eficaz torturadora y asesina por encargo. En complicidad con una facción anarquista, busca desestabilizar el régimen dictatorial que oprime a Ciudad Dársena.</p><p>El apellido Moreno no es una herencia familiar, sino un trofeo tomado de una de sus primeras víctimas. Claudia guarda un objetivo ulterior que la motiva, acercándola un paso más a su meta con cada acción y cada víctima.</p>"
@@ -37,7 +37,8 @@
       "stats": {
         "physique": 4,
         "intellect": 1,
-        "ability": 4,
+        "skill": 4,
+        "perception": 4,
         "empathy": 2
       },
       "secret": "<p>Alejandro no se detiene en la superficie de la piel. Más allá de su trabajo como tatuador, realiza investigaciones secretas sobre rituales oscuros y magia prohibida. Sus tatuajes son también símbolos oscuros que le confieren -él dice- habilidades poco comunes.</p>"
@@ -57,7 +58,8 @@
       "stats": {
         "physique": 1,
         "intellect": 4,
-        "ability": 2,
+        "skill": 2,
+        "perception": 1,
         "empathy": 3
       },
       "secret": "<p>Lo que muy pocos saben es que el fervor del Padre Ernesto es alimentado por algo mucho más oscuro que la fe. Ha entablado un pacto con una entidad malévola, un antiguo demonio que promete un poder inimaginable a cambio de sacrificios humanos. En la Nueva Catedral, bajo el altar, existe una cámara secreta donde Ernesto lleva a cabo rituales prohibidos que desafían las mismas creencias que predica. Aquí, en el silencio, personas desaparecidas de la villa y los barrios cercanos se convierten en ofrendas en su búsqueda desenfrenada de poder absoluto. Lo más escalofriante es que este sacrificio no es solo una traición a su comunidad y su fe, sino un paso calculado hacia un objetivo mucho más siniestro: un ritual final que, según cree, le otorgará poderes casi divinos y le permitirá dictar el destino de Ciudad Dársena y quizás mucho más allá.</p>"
@@ -77,7 +79,8 @@
       "stats": {
         "physique": 2,
         "intellect": 3,
-        "ability": 4,
+        "skill": 4,
+        "perception": 5,
         "empathy": 5
       },
       "secret": "Ha estado experimentando con métodos de tortura y técnicas de interrogatorio en nombre de la iglesia."
@@ -97,30 +100,11 @@
       "stats": {
         "physique": 5,
         "intellect": 2,
-        "ability": 1,
+        "skill": 1,
+        "perception": 3,
         "empathy": 1
       },
       "secret": "Caza ciudadanos corruptos por su cuenta y los mata, considerándolo un servicio a la patria."
-    },
-    {
-      "slug": "p6q7r8",
-      "title": "",
-      "firstName": "Lara",
-      "lastName": "Vega",
-      "age": 22,
-      "mainOccupation": "Salvaje",
-      "secondaryOccupation": "",
-      "faction": "Salvajes",
-      "bio": "Lara Vega, una joven audaz, vive en las tierras baldías fuera de Ciudad Dársena. Su destreza para sobrevivir esconde un deseo de venganza contra aquellos que destruyeron su hogar.",
-      "location": "Tierras Baldías, afueras de Ciudad Dársena",
-      "portrait": "6.jpg",
-      "stats": {
-        "physique": 4,
-        "intellect": 1,
-        "ability": 4,
-        "empathy": 2
-      },
-      "secret": "Está recolectando información sobre los líderes militares de Ciudad Dársena para un ataque vengativo."
     },
     {
       "slug": "s9t0u1",
@@ -137,7 +121,8 @@
       "stats": {
         "physique": 3,
         "intellect": 1,
-        "ability": 4,
+        "skill": 4,
+        "perception": 4,
         "empathy": 3
       },
       "secret": "Es un espía para los militares, informando sobre las actividades subversivas en las alcantarillas."
@@ -157,7 +142,8 @@
       "stats": {
         "physique": 1,
         "intellect": 5,
-        "ability": 2,
+        "skill": 2,
+        "perception": 2,
         "empathy": 4
       },
       "secret": "Ha estado manipulando los currículos educativos para adoctrinar a las nuevas generaciones según su visión del mundo."
@@ -177,7 +163,8 @@
       "stats": {
         "physique": 2,
         "intellect": 4,
-        "ability": 4,
+        "skill": 4,
+        "perception": 5,
         "empathy": 1
       },
       "secret": "Está buscando información sobre la desaparición de su hermana, quien fue arrestada por el régimen."
@@ -197,7 +184,8 @@
       "stats": {
         "physique": 4,
         "intellect": 2,
-        "ability": 3,
+        "skill": 3,
+        "perception": 2,
         "empathy": 3
       },
       "secret": "Está construyendo en secreto un arsenal de armas para una futura rebelión contra el régimen."
@@ -217,7 +205,8 @@
       "stats": {
         "physique": 4,
         "intellect": 2,
-        "ability": 5,
+        "skill": 5,
+        "perception": 5,
         "empathy": 1
       },
       "secret": "Es la ejecutora silenciosa del clero, eliminando a herejes y disidentes sin dejar rastro."
@@ -237,8 +226,9 @@
       "stats": {
         "physique": 2,
         "intellect": 4,
-        "ability": 2,
-        "empathy": 3
+        "skill": 2,
+        "perception": 4,
+        "empathy": 4
       },
       "secret": "Está filtrando información a los rebeldes para ayudar a derrocar al régimen."
     }
