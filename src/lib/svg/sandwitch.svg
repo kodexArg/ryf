@@ -1,0 +1,6 @@
+<svg class="m-auto" width="36" height="36" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="60" height="60" rx="7" fill="#6e7458" />
+  <rect x="4" y="13" width="51" height="7" rx="3.5" fill="black" />
+  <rect x="4" y="28" width="51" height="7" rx="3.5" fill="black" />
+  <rect x="4" y="43" width="51" height="7" rx="3.5" fill="black" />
+</svg>
