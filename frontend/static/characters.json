@@ -1,0 +1,236 @@
+{
+  
+  "characters": [
+    {
+      "slug": "a1b2c3",
+      "title": "",
+      "firstName": "Claudia",
+      "lastName": "Moreno",
+      "age": 30,
+      "mainOccupation": "Sastre",
+      "secondaryOccupation": "Criminal",
+      "faction": "Trabajadores",
+      "bio": "<p>Claudia Moreno es una presencia discreta pero inconfundible en Ciudad Dársena. Su taller de costura es un rincón de habilidad y arte en un callejón céntrico, muy transitado y más estrecho de lo que debería. Su destreza con el hilo y la aguja queda expuesta por un vidrio muy amplio con una mancha oval en su centro, que alguna vez fue el codiciado logotipo que ahora ella borda en sus mejores prendas con la palabra 'Moreno' en letras góticas y motivos florales, a veces geométricos y fractales.</p><p>Vestida con un estilo masculino y elegante, Claudia deja entrever destellos de su ascendencia francesa. Si bien puede no ser la persona más locuaz o socialmente agraciada, no necesita palabras para demostrar su habilidad en la sastrería. Originaria de la Ciudad de Mendoza, ha traído un toque europeo a la cultura local.</p>",
+      "location": "Zona Obrera, Ciudad Dársena",
+      "portrait": "1.jpg",
+      "stats": {
+        "physique": 3,
+        "intellect": 2,
+        "skill": 5,
+        "perception": 3,
+        "empathy": 1
+      },
+      "secret": "<p>Detrás de los hilos y patrones, el taller alberga una sala secreta donde Claudia se transforma en una eficaz torturadora y asesina por encargo. En complicidad con una facción anarquista, busca desestabilizar el régimen dictatorial que oprime a Ciudad Dársena.</p><p>El apellido Moreno no es una herencia familiar, sino un trofeo tomado de una de sus primeras víctimas. Claudia guarda un objetivo ulterior que la motiva, acercándola un paso más a su meta con cada acción y cada víctima.</p>"
+    },
+    {
+      "slug": "d4e5f6",
+      "title": "",
+      "firstName": "Alejandro",
+      "lastName": "García",
+      "age": 24,
+      "mainOccupation": "Tatuador",
+      "secondaryOccupation": "",
+      "faction": "Parias",
+      "bio": "<p>Un joven de semblante audaz, es una figura difícil de olvidar en la Zona Industrial de Ciudad Dársena. Su look formal pero rebelde revela que este tatuador no es uno del montón. Cada diseño que sale de su estudio es una obra maestra en tinta, y quienes lo ven trabajar no pueden evitar quedar fascinados por su destreza.</p><p>Con un cuerpo lleno de tatuajes, Alejandro no es solo un artista, sino también un lienzo.</p>",
+      "location": "Zona Industrial, Ciudad Dársena",
+      "portrait": "2.jpg",
+      "stats": {
+        "physique": 4,
+        "intellect": 1,
+        "skill": 4,
+        "perception": 4,
+        "empathy": 2
+      },
+      "secret": "<p>Alejandro no se detiene en la superficie de la piel. Más allá de su trabajo como tatuador, realiza investigaciones secretas sobre rituales oscuros y magia prohibida. Sus tatuajes son también símbolos oscuros que le confieren -él dice- habilidades poco comunes.</p>"
+    },
+    {
+      "slug": "g7h8i9",
+      "title": "Padre",
+      "firstName": "Ernesto",
+      "lastName": "López",
+      "age": 60,
+      "mainOccupation": "Sacerdote",
+      "secondaryOccupation": "",
+      "faction": "Clero",
+      "bio": "<p>Padre Ernesto López, de semblante austero y mirada inquebrantable, es una columna de la Nueva Catedral de San Pedro en Ciudad Dársena. Sin embargo, este sacerdote de alta estatura no siempre estuvo en el corazón de la religión organizada. Nacido y criado en una villa a las afueras, Ernesto comenzó como un simple sacerdote en un entorno de explotación y opresión.</p><p>En esa villa, la gente trabajaba como esclavos en la tierra, siempre bajo la atenta vigilancia del ejército y los administradores locales. Aunque su papel inicial era servir como guía espiritual y como un árbitro de la paz y la justicia, Ernesto mostró una inclinación por el poder desde el principio. Despiadadamente astuto, usó su posición para manipular a los demás y consolidar su propia autoridad, elevándose a través de las filas del Clero a una velocidad impresionante.</p><p>Fanático en su fe y sin restricciones morales cuando se trata de asegurar su influencia, ha manipulado las escrituras para justificar todo, desde castigos brutales hasta exorcismos que más se asemejan a torturas. Su fervor religioso es tan intenso como peligroso, y se ha vuelto famoso, o más bien infame, por abusar de su posición para satisfacer su deseo de poder que va más allá de cualquier comprensión humana.</p><p>Ahora en la Nueva Catedral de San Pedro, su red de influencia se ha extendido aún más. El Padre Ernesto no es solo un sacerdote; se ha convertido en una entidad temida y respetada que maneja los hilos detrás del poder del Clero en Ciudad Dársena.</p>",
+      "location": "Nueva Catedral de San Pedro, Ciudad Dársena",
+      "portrait": "3.jpg",
+      "stats": {
+        "physique": 1,
+        "intellect": 4,
+        "skill": 2,
+        "perception": 1,
+        "empathy": 3
+      },
+      "secret": "<p>Lo que muy pocos saben es que el fervor del Padre Ernesto es alimentado por algo mucho más oscuro que la fe. Ha entablado un pacto con una entidad malévola, un antiguo demonio que promete un poder inimaginable a cambio de sacrificios humanos. En la Nueva Catedral, bajo el altar, existe una cámara secreta donde Ernesto lleva a cabo rituales prohibidos que desafían las mismas creencias que predica. Aquí, en el silencio, personas desaparecidas de la villa y los barrios cercanos se convierten en ofrendas en su búsqueda desenfrenada de poder absoluto. Lo más escalofriante es que este sacrificio no es solo una traición a su comunidad y su fe, sino un paso calculado hacia un objetivo mucho más siniestro: un ritual final que, según cree, le otorgará poderes casi divinos y le permitirá dictar el destino de Ciudad Dársena y quizás mucho más allá.</p>"
+    },
+    {
+      "slug": "j0k1l2",
+      "title": "",
+      "firstName": "Isabella",
+      "lastName": "Martínez",
+      "age": 32,
+      "mainOccupation": "Enfermera",
+      "secondaryOccupation": "",
+      "faction": "Clero",
+      "bio": "Isabella Martínez, de apariencia angelical, trabaja en la Zona Médica de Ciudad Dársena. Su belleza esconde una frialdad que utiliza para experimentar con pacientes.",
+      "location": "Zona Médica, Ciudad Dársena",
+      "portrait": "4.jpg",
+      "stats": {
+        "physique": 2,
+        "intellect": 3,
+        "skill": 4,
+        "perception": 5,
+        "empathy": 5
+      },
+      "secret": "Ha estado experimentando con métodos de tortura y técnicas de interrogatorio en nombre de la iglesia."
+    },
+    {
+      "slug": "m3n4o5",
+      "title": "",
+      "firstName": "Camila",
+      "lastName": "Gutiérrez",
+      "age": 25,
+      "mainOccupation": "Gendarme",
+      "secondaryOccupation": "",
+      "faction": "Militar",
+      "bio": "Camila Gutiérrez, de cuerpo musculoso, reside en la Zona Militar de Ciudad Dársena. Su lealtad al régimen esconde una sed de sangre que sacia en las calles por la noche.",
+      "location": "Zona Militar, Ciudad Dársena",
+      "portrait": "5.jpg",
+      "stats": {
+        "physique": 5,
+        "intellect": 2,
+        "skill": 1,
+        "perception": 3,
+        "empathy": 1
+      },
+      "secret": "Caza ciudadanos corruptos por su cuenta y los mata, considerándolo un servicio a la patria."
+    },
+    {
+      "slug": "s9t0u1",
+      "title": "",
+      "firstName": "Carlos",
+      "lastName": "Díaz",
+      "age": 40,
+      "mainOccupation": "Cloaquero",
+      "secondaryOccupation": "",
+      "faction": "Trabajadores",
+      "bio": "Carlos Díaz, de mirada astuta, vive en las alcantarillas de Ciudad Dársena. Su trabajo le permite moverse por la ciudad sin ser detectado, recolectando secretos y chantajeando a los poderosos.",
+      "location": "Alcantarillas, Ciudad Dársena",
+      "portrait": "7.jpg",
+      "stats": {
+        "physique": 3,
+        "intellect": 1,
+        "skill": 4,
+        "perception": 4,
+        "empathy": 3
+      },
+      "secret": "Es un espía para los militares, informando sobre las actividades subversivas en las alcantarillas."
+    },
+    {
+      "slug": "v2w3x4",
+      "title": "Profesor",
+      "firstName": "Alberto",
+      "lastName": "Ramírez",
+      "age": 70,
+      "mainOccupation": "Político",
+      "secondaryOccupation": "Profesor",
+      "faction": "Clero",
+      "bio": "Profesor Alberto, un hombre mayor, vive en la Zona Educativa de Ciudad Dársena. Su aparente sabiduría oculta una ambición desmedida por el poder y el control.",
+      "location": "Zona Educativa, Ciudad Dársena",
+      "portrait": "8.jpg",
+      "stats": {
+        "physique": 1,
+        "intellect": 5,
+        "skill": 2,
+        "perception": 2,
+        "empathy": 4
+      },
+      "secret": "Ha estado manipulando los currículos educativos para adoctrinar a las nuevas generaciones según su visión del mundo."
+    },
+    {
+      "slug": "y5z6a7",
+      "title": "",
+      "firstName": "Sofía",
+      "lastName": "Ruiz",
+      "age": 23,
+      "mainOccupation": "Informante",
+      "secondaryOccupation": "",
+      "faction": "Parias",
+      "bio": "Sofía Ruiz, siempre cubierta por un sobretodo gris, vive en las sombras de la Zona Comercial de Ciudad Dársena. Su rostro oculto y su expresión triste esconden una vida de espionaje y recolección de información.",
+      "location": "Zona Comercial, Ciudad Dársena",
+      "portrait": "9.jpg",
+      "stats": {
+        "physique": 2,
+        "intellect": 4,
+        "skill": 4,
+        "perception": 5,
+        "empathy": 1
+      },
+      "secret": "Está buscando información sobre la desaparición de su hermana, quien fue arrestada por el régimen."
+    },
+    {
+      "slug": "350aaa",
+      "title": "",
+      "firstName": "Daniel",
+      "lastName": "Fernández",
+      "age": 33,
+      "mainOccupation": "Carpintero",
+      "secondaryOccupation": "",
+      "faction": "Trabajadores",
+      "bio": "Daniel Fernández, un hombre de apariencia completamente promedio, vive en la Zona Residencial de Ciudad Dársena. Su barba negra y su ropa modesta ocultan su habilidad para crear armas y herramientas esenciales para la comunidad.",
+      "location": "Zona Residencial, Ciudad Dársena",
+      "portrait": "10.jpg",
+      "stats": {
+        "physique": 4,
+        "intellect": 2,
+        "skill": 3,
+        "perception": 2,
+        "empathy": 3
+      },
+      "secret": "Está construyendo en secreto un arsenal de armas para una futura rebelión contra el régimen."
+    },
+    {
+      "slug": "020gbd",
+      "title": "Hermana",
+      "firstName": "María",
+      "lastName": "Vidal",
+      "age": 35,
+      "mainOccupation": "Monja",
+      "secondaryOccupation": "Asesina",
+      "faction": "Clero",
+      "bio": "Hermana María, una monja con un piercing en la lengua, reside en la Zona Religiosa de Ciudad Dársena. Su hábito religioso no logra ocultar su naturaleza violenta, evidenciada por la forma en que lame su arma antes de cada misión.",
+      "location": "Zona Religiosa, Ciudad Dársena",
+      "portrait": "11.jpg",
+      "stats": {
+        "physique": 4,
+        "intellect": 2,
+        "skill": 5,
+        "perception": 5,
+        "empathy": 1
+      },
+      "secret": "Es la ejecutora silenciosa del clero, eliminando a herejes y disidentes sin dejar rastro."
+    },
+    {
+      "slug": "cc09x0",
+      "title": "",
+      "firstName": "Laura",
+      "lastName": "González",
+      "age": 28,
+      "mainOccupation": "Secretaria",
+      "secondaryOccupation": "",
+      "faction": "Clero",
+      "bio": "Laura González, una mujer rubia de rostro serio, vive en la Zona Administrativa de Ciudad Dársena. Su reloj caro contrasta con su ropa promedio, y trabaja como secretaria para los líderes del clero, manejando información delicada.",
+      "location": "Zona Administrativa, Ciudad Dársena",
+      "portrait": "12.jpg",
+      "stats": {
+        "physique": 2,
+        "intellect": 4,
+        "skill": 2,
+        "perception": 4,
+        "empathy": 4
+      },
+      "secret": "Está filtrando información a los rebeldes para ayudar a derrocar al régimen."
+    }
+  ]
+}
