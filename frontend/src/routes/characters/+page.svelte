@@ -66,7 +66,6 @@
   .custom-carousel {
     @apply w-full h-full flex overflow-x-scroll overflow-y-hidden pt-4 touch-pan-x;
     @apply flex-row-reverse items-end pl-12 pr-32;
-    transition: all;
   }
 
   /* TODO: Firefox doesn't work with webkit */

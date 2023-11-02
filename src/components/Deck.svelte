@@ -1,7 +1,5 @@
 <script>
 	import { onMount, afterUpdate } from 'svelte';
-	import { fly } from 'svelte/transition';
-	import { expoIn } from 'svelte/easing';
 	import Card from './Card.svelte';
 
 	let customCarousel;
@@ -45,7 +43,7 @@
 		}
 	});
 </script>
-<section out:fly={{ y: 1000, duration: 400, easing: expoIn }}>
+<section>
 	<div class="custom-carousel" bind:this={customCarousel}>
 		{#each characters as character}
 			<div />
@@ -62,7 +60,6 @@
 	.custom-carousel {
 		@apply w-full h-full flex overflow-x-scroll overflow-y-hidden pt-4 touch-pan-x;
 		@apply flex-row-reverse items-end pl-12 pr-32;
-		transition: all;
 	}
 
 	/* TODO: Firefox doesn't work with webkit */

@@ -86,14 +86,12 @@
     @apply select-none;
     @apply relative flex flex-col w-[200px] mb-8;
     @apply bg-primary-900 rounded-xl;
-    @apply transition duration-500;
     @apply outline outline-2 outline-primary-900;
     @apply cursor-pointer;
     box-shadow: 1rem 1rem 1rem rgb(0, 0, 0, 0.75), 0 0 2rem #000;
   }
 
   .enlarged {
-    @apply transition ease-in-out duration-300;
     @apply z-50 scale-[115%] -translate-y-6 translate-x-16;
   }
 
@@ -108,7 +106,6 @@
   }
 
   .reduced {
-    @apply transition ease-in-out duration-500;
     @apply z-0 scale-100;
   }
 
@@ -116,9 +113,6 @@
     @apply fixed -left-20 inset-0 bg-primary-900 opacity-50 z-30;
   }
 
-  .centered {
-    @apply transition ease-in-out delay-100 duration-500 -translate-x-4;
-  }
 
   /* card picture */
   .card-image {
@@ -130,7 +124,6 @@
   .card-image img {
     @apply absolute z-0;
     @apply w-full aspect-[0.625] object-cover;
-    view-transition-name: portrait;
   }
 
   /* text over image */

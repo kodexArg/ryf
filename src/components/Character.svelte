@@ -18,14 +18,11 @@
 		}
 	});
 
-
-	import { fly } from 'svelte/transition';
-	import { expoOut } from 'svelte/easing';
 	import SkillBar from '$lib/SkillBar.svelte';
 
 </script>
 
-<main in:fly={{ y: 600, delay: 500, duration: 1000, easing: expoOut }}>
+<main>
     {#if character}
 	<section>
 		<img src="/characters/{character.portrait}" alt={character.portrait} />

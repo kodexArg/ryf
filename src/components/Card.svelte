@@ -86,7 +86,6 @@
     @apply select-none;
     @apply relative flex flex-col w-[200px] mb-8;
     @apply bg-primary-900 rounded-xl;
-    @apply transition duration-500;
     @apply outline outline-2 outline-primary-900;
     @apply cursor-pointer;
     box-shadow: 1rem 1rem 1rem rgb(0, 0, 0, 0.75), 0 0 2rem #000;
@@ -130,7 +129,6 @@
   .card-image img {
     @apply absolute z-0;
     @apply w-full aspect-[0.625] object-cover;
-    view-transition-name: portrait;
   }
 
   /* text over image */
