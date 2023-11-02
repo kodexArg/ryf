@@ -2,7 +2,7 @@
 
 const config = {
 	content: [
-		'./src/**/*.{html,js,svelte,ts}',
+		'./src/**/*.{html,svg,js,svelte,ts}',
 	],
 
 	darkMode: 'class',

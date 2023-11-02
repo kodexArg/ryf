@@ -1,29 +1,27 @@
 <script>
+	import Icon from '$lib/Icon.svelte'
 
 </script>
 
-<footer>
-	<a href="https://github.com/kodexArg/ryf">©️2023 kodexArg</a>
-	<address>
-		<a href="https://github.com/kodexArg/ryf" target="_blank">
-			<!-- icon code -->
+<footer class="flex h-6 justify-between items-center px-1 py-0.5 bg-black">
+	<a class="text-primary-200 text-xs hover:text-primary-100"
+	   href="https://github.com/kodexArg/ryf">
+	   ©️2023 <strong>kodexArg</strong>
+	</a>
+	<address class="flex justify-between items-center space-x-1 px-3">
+		<a href="https://github.com/kodexArg/ryf" 
+		   target="_blank"
+		   class="text-primary-200 text-xs hover:text-primary-100"
+		   >
+			<Icon svg="github" class="w-4 h-4 text-primary-300 hover:text-white" />
+
 		</a>
-		<a href="mailto:kodexarg@gmail.com" target="_blank">
-			<!-- icon code -->
+		<a href="mailto:kodexarg@gmail.com" 
+		   target="_blank"
+		   class="text-primary-200 text-xs hover:text-primary-100"
+		   >
+			<Icon svg="envelop" class="w-4 h-4 text-primary-300 hover:text-white"/>
+
 		</a>
 	</address>
 </footer>
-
-<style lang="postcss">
-	footer {
-		@apply flex justify-between px-3 p-0.5 bg-primary-900 bg-opacity-50 border-t-2 border-primary-900 drop-shadow-xl;
-	}
-
-	address {
-		@apply font-overpass flex space-x-2;
-	}
-
-	a {
-		@apply text-primary-200 text-xs hover:text-white;
-	}
-</style>

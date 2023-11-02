@@ -70,7 +70,7 @@
 	</section>
     {:else}
     <section>
-        No characters in the database
+       <div class="grid place-content-center text-xl font-bahiana italic text-primary-100 drop-shadow-lg">Cargando...</div> 
     </section>
     {/if}
 </main>
