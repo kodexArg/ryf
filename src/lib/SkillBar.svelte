@@ -7,7 +7,7 @@
   const statTitles = {
     physique: "Físico",
     intellect: "Intelecto",
-    skill: "Habilidad",
+    skill: "Destreza",
     perception: "Sentidos",
     empathy: "Empatía",
   };

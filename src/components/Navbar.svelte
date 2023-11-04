@@ -3,7 +3,7 @@
 	import { fade } from 'svelte/transition';
 	import { page } from '$app/stores';
 	import Icon from '$lib/Icon.svelte';
-	import SquareButton from './SquareButton.svelte';
+	import SquareButton from '../lib/SquareButton.svelte';
 	import { onDestroy } from 'svelte';
   
 	let showPopup = false;
