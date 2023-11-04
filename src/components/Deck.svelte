@@ -64,7 +64,7 @@
 
 	/* TODO: Firefox doesn't work with webkit */
 	::-webkit-scrollbar {
-		@apply z-50;
+		@apply z-40;
 	}
 
 	::-webkit-scrollbar-track {

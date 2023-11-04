@@ -93,7 +93,7 @@
 
   .enlarged {
     @apply transition ease-in-out duration-300;
-    @apply z-50 scale-[115%] -translate-y-6 translate-x-16;
+    @apply z-40 scale-[115%] -translate-y-6 translate-x-16;
   }
 
   @media (min-width: 640px) {

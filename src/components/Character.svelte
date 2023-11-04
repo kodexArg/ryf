@@ -1,10 +1,13 @@
 <script>
-    import { onMount } from 'svelte';
-    import { page } from '$app/stores'
+	import { fade } from 'svelte/transition';
+	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 
-    let param = $page.params;
-    let slug = param.slug
-    let character
+	let param = $page.params;
+	let slug = param.slug;
+	let character;
+
+	let fadeConfig = {duration: 600}
 
 	onMount(async () => {
 		const source = '/characters.json';
@@ -19,57 +22,60 @@
 	});
 
 	import SkillBar from '$lib/SkillBar.svelte';
-
 </script>
 
-<main>
-    {#if character}
-	<section>
-		<img src="/characters/{character.portrait}" alt={character.portrait} />
-	</section>
+<main in:fade={fadeConfig}>
+	{#if character}
+		<section>
+			<img src="/characters/{character.portrait}" alt={character.portrait} />
+		</section>
 
-	<section>
-		<div class="character-name">
-			<div>
-				{#if character.title}{character.title}{/if}
+		<section>
+			<div class="character-name">
+				<div>
+					{#if character.title}{character.title}{/if}
+				</div>
+				<div>
+					{character.firstName}
+					{character.lastName}
+				</div>
 			</div>
-			<div>
-				{character.firstName}
-				{character.lastName}
+			<div class="character-ocupation">
+				{character.mainOccupation}{#if character.secondaryOccupation}/{character.secondaryOccupation}{/if}
+				({character.age})
 			</div>
-		</div>
-		<div class="character-ocupation">
-			{character.mainOccupation}{#if character.secondaryOccupation}/{character.secondaryOccupation}{/if}
-			({character.age})
-		</div>
-	</section>
+		</section>
 
-	<section>
-		<div class="character-skills">
-			{#each Object.entries(character.stats) as [key, value]}
-				<SkillBar stat={key} number={value} />
-			{/each}
-		</div>
-	</section>
+		<section>
+			<div class="character-skills">
+				{#each Object.entries(character.stats) as [key, value]}
+					<SkillBar stat={key} number={value} />
+				{/each}
+			</div>
+		</section>
 
-	<section>
-		<details>
-			<summary>BIOGRAFÍA</summary>
-			<div class="typewriter-text">{@html character.bio}</div>
-		</details>
-	</section>
+		<section>
+			<details>
+				<summary>BIOGRAFÍA</summary>
+				<div class="typewriter-text">{@html character.bio}</div>
+			</details>
+		</section>
 
-	<section>
-		<details>
-			<summary>SECRETO</summary>
-			<div class="typewriter-text">{@html character.secret}</div>
-		</details>
-	</section>
-    {:else}
-    <section>
-       <div class="grid place-content-center text-xl font-bahiana italic text-primary-100 drop-shadow-lg">Cargando...</div> 
-    </section>
-    {/if}
+		<section>
+			<details>
+				<summary>SECRETO</summary>
+				<div class="typewriter-text">{@html character.secret}</div>
+			</details>
+		</section>
+	{:else}
+		<section>
+			<div
+				class="grid place-content-center text-xl font-bahiana italic text-primary-100 drop-shadow-lg"
+			>
+				Cargando...
+			</div>
+		</section>
+	{/if}
 </main>
 
 <style lang="postcss">

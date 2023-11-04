@@ -3,7 +3,7 @@
 
 </script>
 
-<footer class="flex h-6 justify-between items-center px-1 py-0.5 bg-black">
+<footer class="flex h-5 justify-between items-end px-2 bg-black">
 	<a class="text-primary-200 text-xs hover:text-primary-100"
 	   href="https://github.com/kodexArg/ryf">
 	   ©️2023 <strong>kodexArg</strong>
