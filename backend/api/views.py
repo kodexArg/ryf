@@ -1,8 +1,8 @@
-from django.shortcuts import render
-from rest_framework import generics
-from api.models import Settings
-from api.serializers import SettingsSerializer
+from rest_framework import viewsets
+from .models import Character
+from .serializers import CharacterSerializer
 
-class SettingsListCreateView(generics.ListCreateAPIView):
-    queryset = Settings.objects.all()
-    serializer_class = SettingsSerializer
+
+class CharacterViewSet(viewsets.ModelViewSet):
+    queryset = Character.objects.all()
+    serializer_class = CharacterSerializer

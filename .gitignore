@@ -1,3 +1,6 @@
+### Backend Exclusion
+/mysql_data
+
 ### SvelteKit ###
 # Included with the package
 
