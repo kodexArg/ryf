@@ -34,7 +34,7 @@
 	>
 		{#if showText}
 			<p in:fade={{duration: 200}} 
-                class="text-right text-primary-900 w-24 font-overpass-mono leading-4">
+                class="text-right text-primary-900 w-28 font-overpass-mono leading-4">
 		        {text}
 			</p>
 		{/if}

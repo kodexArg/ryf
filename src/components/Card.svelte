@@ -24,7 +24,7 @@
     if (clickTimeout) clearTimeout(clickTimeout);
     if (enlarged) {
       dblclick = true;
-      goto(`/characters/${character.slug}`);
+      goto(`/personajes/${character.slug}`);
     } else {
       enlarged = true;
     }

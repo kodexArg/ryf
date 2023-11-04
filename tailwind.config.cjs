@@ -1,9 +1,7 @@
 /** @type {import('tailwindcss').Config}*/
 
 const config = {
-	content: [
-		'./src/**/*.{html,svg,js,svelte,ts}',
-	],
+	content: ['./src/**/*.{html,svg,js,svelte,ts}'],
 
 	darkMode: 'class',
 
@@ -28,6 +26,19 @@ const config = {
 					700: '#424635',
 					800: '#2c2e23',
 					900: '#161712'
+				},
+				blood: {
+					50: '#faf3ed',
+					100: '#f2e5da',
+					200: '#e3c1ac',
+					300: '#d19880',
+					400: '#ad4836',
+					500: '#8a0303',
+					600: '#7d0202',
+					700: '#660101',
+					800: '#520101',
+					900: '#3d0101',
+					950: '#290000'
 				}
 			}
 		}

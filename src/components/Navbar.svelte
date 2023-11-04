@@ -24,15 +24,9 @@
 	  }, 2000);
 	};
   
-	const resetTimer = () => {
-	  clearTimer();
-	};
+	const resetTimer = () => clearTimer();
   
-	const clearTimer = () => {
-	  if (showPopupTimer) {
-		clearTimeout(showPopupTimer);
-	  }
-	};
+	const clearTimer = () => { if (showPopupTimer) clearTimeout(showPopupTimer); }
   
 	onDestroy(clearTimer);
   </script>
@@ -56,12 +50,13 @@
 	  on:mouseover={resetTimer}
 	  on:mouseout={setTimer}
 	  on:click={() => showPopup = false}
-	  class="fixed z-50 mt-0.5 right-2 top-12 flex flex-col items-end space-y-2 mr-0.5"
+	  class="fixed z-50 mt-1 right-2 top-12 flex flex-col items-end space-y-1 mr-0.5"
 	  transition:fade={transitionConfig}
 	>
 	  <SquareButton icon="home" text="Cuartel General" href="/" />
-	  <SquareButton icon="officer" text="Personajes Generados" href="/characters"/>
-	  <SquareButton icon="files" text="Archivos Secretos" />
+	  <SquareButton icon="officer" text="Personajes Generados" href="/personajes"/>
+	  <SquareButton icon="secrets" text="Archivos Secretos" href="/"/>
+	  <SquareButton icon="ryf" text="Sistema de Juego" href="/sistema"/>
 	</div>
   {/if}
   
