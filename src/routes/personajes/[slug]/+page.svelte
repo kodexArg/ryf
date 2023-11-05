@@ -1,5 +1,5 @@
 <script>
-	import Character from "../../../components/Character.svelte";
+	import Character from "$comp/Character.svelte";
 
 </script>
 

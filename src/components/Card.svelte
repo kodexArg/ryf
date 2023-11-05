@@ -42,6 +42,7 @@
 {/if}
 
 <article class:enlarged class:reduced={!enlarged}>
+  {#if character}
   <card
     data-sveltekit-preload-data
     class="card"
@@ -61,12 +62,12 @@
       <div class="portrait-box">
         <div class="name">
           {#if character.title}{character.title}<br />{/if}
-          {character.firstName}
-          {character.lastName}
+          {character.first_name}
+          {character.last_name}
         </div>
         <div class="subtitle">
           <div class="occupation">
-            {character.mainOccupation}{#if character.secondaryOccupation}/{character.secondaryOccupation}{/if}
+            {character.occupation}{#if character.secret_occupation}/{character.secret_occupation}{/if}
           </div>
         </div>
       </div>
@@ -74,10 +75,13 @@
 
     <div class="m-2">
       {#each Object.entries(character.stats) as [key, value]}
-        <SkillBar stat={key} number={value} />
+        {#if key!=='id'}
+          <SkillBar stat={key} number={value} />
+        {/if}
       {/each}
     </div>
   </card>
+  {/if}
 </article>
 
 <style lang="postcss">

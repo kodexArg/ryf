@@ -2,8 +2,7 @@
   export let number = 0;
   export let stat;
   export let classString = "h-5 w-12";
-  
-  // Spanish titles
+
   const statTitles = {
     physique: "Físico",
     intellect: "Intelecto",

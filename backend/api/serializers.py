@@ -2,12 +2,10 @@ from rest_framework import serializers
 from .models import Character, Stat
 
 
-
 class StatSerializer(serializers.ModelSerializer):
     class Meta:
         model = Stat
         fields = '__all__'
-
 
 
 class CharacterSerializer(serializers.ModelSerializer):
@@ -16,25 +14,35 @@ class CharacterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Character
         fields = '__all__'
+    
+    def validate(self, data):
+        if 'some_field' in data and data['some_field'] == 'some_value':
+            raise serializers.ValidationError("some_field cannot be some_value.")
+        return data
 
+    
     def create(self, validated_data):
-        stats_data = validated_data.pop('stats')  # extracting stats from validated_data
-        stats = Stat.objects.create(**stats_data)  # create stat instance with it
-        character = Character.objects.create(stats=stats, **validated_data)  # create character with stat asociated
+        stats_data = validated_data.pop('stats', None)
+        character = Character.objects.create(**validated_data)
+        if stats_data:
+            stats = Stat.objects.create(**stats_data)
+            character.stats = stats
+            character.save()
         return character
 
+
     def update(self, instance, validated_data):
-        if 'portrait' not in validated_data:
-            instance.portrait = instance.portrait  # set the current portrait
+        stats_data = validated_data.pop('stats', None) 
+        
+        if stats_data:
+            stats = instance.stats
+            for attr, value in stats_data.items():
+                setattr(stats, attr, value)
+            stats.save()
             
-        stats_data = validated_data.pop('stats')
-        stats = instance.stats
-
-        for attr, value in stats_data.items():
-            setattr(stats, attr, value)
-        stats.save()
-
         for attr, value in validated_data.items():
-            setattr(instance, attr, value)
+            if hasattr(instance, attr):
+                setattr(instance, attr, value)
         instance.save()
         return instance
+

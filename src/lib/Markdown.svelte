@@ -11,7 +11,7 @@
   
     onMount(async () => {
       // Dynamically import the markdown file based on the `md` prop
-      const markdownFile = await import(`../documents/${md}.md?raw`);
+      const markdownFile = await import(`$docs/${md}.md?raw`);
       markdownContent = mdParser.render(markdownFile.default);
     });
 </script>

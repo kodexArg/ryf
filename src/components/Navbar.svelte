@@ -1,10 +1,10 @@
 <script>
-	import { goSomeWhereBack } from '$lib/helpers.js';
+	import { onDestroy } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { page } from '$app/stores';
+	import { goSomeWhereBack } from '$lib/helpers.js';
 	import Icon from '$lib/Icon.svelte';
-	import SquareButton from '../lib/SquareButton.svelte';
-	import { onDestroy } from 'svelte';
+	import SquareButton from '$lib/SquareButton.svelte';
   
 	let showPopup = false;
 	let showPopupTimer; // time before fading out

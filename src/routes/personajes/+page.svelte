@@ -1,8 +1,10 @@
 <script>
-	import Deck from "../../components/Deck.svelte";
+    import Deck from "$comp/Deck.svelte"
+    export let data;
+	export let characters = data.props.characters;
 
 </script>
 
 <main>
-    <Deck />
+    <Deck {characters} />
 </main>

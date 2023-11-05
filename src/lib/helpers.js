@@ -1,7 +1,7 @@
 // $lib/helpers.js
 import { goto } from '$app/navigation';
-import { get } from 'svelte/store';
 import { page } from '$app/stores';
+import { get } from 'svelte/store';
 
 export const goSomeWhereBack = () => {
     const $page = get(page); // get the current value of the page store

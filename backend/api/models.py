@@ -37,6 +37,7 @@ class Character(models.Model):
     location = models.CharField(max_length=20, null=True)
     portrait_url = models.URLField(blank=True, null=True) 
     appearance_description = models.TextField(blank=True)
+
     stats = models.OneToOneField(Stat, on_delete=models.CASCADE)
 
     def __str__(self) -> str:

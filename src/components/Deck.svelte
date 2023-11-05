@@ -1,48 +1,48 @@
 <script>
 	import { onMount, afterUpdate } from 'svelte';
-	import Card from './Card.svelte';
-
+	import Card from '$comp/Card.svelte';
+  
 	let customCarousel;
-	let characters = []
-
-	async function* fetchCharacters() {
-		function delay(ms) {
-			return new Promise((resolve) => setTimeout(resolve, ms));
-		}
-		const response = await fetch('/characters.json');
-		const data = await response.json();
-		console.log(data)
-		for (const character of data.characters) {
-			yield character;
-			await delay(100);
-		}
+	export let characters;
+  
+	// local array to manage displayed characters
+	let displayedCharacters = [];
+  
+	async function* loadCharacters() {
+	  function delay(ms) {
+		return new Promise((resolve) => setTimeout(resolve, ms));
+	  }
+	  for (const character of characters) {
+		yield character;
+		await delay(100); // Delay between character renders
+	  }
 	}
-
+  
 	onMount(async () => {
-		// scroll with the wheel
-		customCarousel.addEventListener('wheel', function (e) {
-			if (e.deltaY !== 0) {
-				e.preventDefault();
-				this.scrollLeft += e.deltaY;
-			}
-		});
-
-		// load characters one by one
-		for await (const character of fetchCharacters()) {
-			characters = [...characters, character];
+	  customCarousel.addEventListener('wheel', function (e) {
+		if (e.deltaY !== 0) {
+		  e.preventDefault();
+		  this.scrollLeft += e.deltaY;
 		}
+	  });
+  
+	  for await (const character of loadCharacters()) {
+		displayedCharacters = [...displayedCharacters, character];
+	  }
 	});
-
+  
 	afterUpdate(() => {
-		if (characters.length > 0) {
-			const customCarousel = document.querySelector('.custom-carousel');
-			const newScrollPosition = -customCarousel.clientWidth;
-			customCarousel.scrollTo({
-				behavior: 'smooth'
-			});
-		}
+	  if (displayedCharacters.length > 0) {
+		const customCarousel = document.querySelector('.custom-carousel');
+		const newScrollPosition = -customCarousel.clientWidth;
+		customCarousel.scrollTo({
+		  behavior: 'smooth'
+		});
+	  }
 	});
-</script>
+  </script>
+  
+
 <section>
 	<div class="custom-carousel" bind:this={customCarousel}>
 		{#each characters as character}
