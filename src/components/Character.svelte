@@ -2,46 +2,42 @@
 	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
+	import SkillBar from '$lib/SkillBar.svelte';
+
+	let character;
 
 	let param = $page.params;
 	let slug = param.slug;
-	let character;
 
 	let fadeConfig = {duration: 600}
-
-	onMount(async () => {
-		const source = '/characters.json';
-		const res = await fetch(source);
-		const json = await res.json();
-
-		character = json.characters.find((item) => item.slug === slug);
-
-		if (!character) {
-			// Handle 404, character not found
+	
+	onMount(() => {
+		const storedCharacter = sessionStorage.getItem('selectedCharacter');
+  		if (storedCharacter) {
+			character = JSON.parse(storedCharacter);
+		} else {
+			character = {}
 		}
 	});
 
-	import SkillBar from '$lib/SkillBar.svelte';
 </script>
 
 <main in:fade={fadeConfig}>
 	{#if character}
 		<section>
-			<img src="/characters/{character.portrait}" alt={character.portrait} />
+			<img src="/img/c/{character.portrait_filename}" alt="Foto de {character.first_name}" />
 		</section>
 
 		<section>
 			<div class="character-name">
 				<div>
 					{#if character.title}{character.title}{/if}
-				</div>
-				<div>
-					{character.firstName}
-					{character.lastName}
+					{character.first_name}
+					{character.last_name}
 				</div>
 			</div>
 			<div class="character-ocupation">
-				{character.mainOccupation}{#if character.secondaryOccupation}/{character.secondaryOccupation}{/if}
+				{character.occupation}{#if character.secret_occupation}/{character.secret_occupation}{/if}
 				({character.age})
 			</div>
 		</section>
@@ -54,19 +50,23 @@
 			</div>
 		</section>
 
+		{#if character.biography}
 		<section>
 			<details>
 				<summary>BIOGRAFÍA</summary>
-				<div class="typewriter-text">{@html character.bio}</div>
+				<div class="typewriter-text">@html character.biography}</div>
 			</details>
 		</section>
+		{/if}
 
+		{#if character.secret}
 		<section>
 			<details>
 				<summary>SECRETO</summary>
-				<div class="typewriter-text">{@html character.secret}</div>
+				<div class="typewriter-text">@html character.secret}</div>
 			</details>
 		</section>
+		{/if}
 	{:else}
 		<section>
 			<div

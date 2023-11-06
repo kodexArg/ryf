@@ -17,7 +17,8 @@
 		await delay(100); // Delay between character renders
 	  }
 	}
-  
+
+ 
 	onMount(async () => {
 	  customCarousel.addEventListener('wheel', function (e) {
 		if (e.deltaY !== 0) {
