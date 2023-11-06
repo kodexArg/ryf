@@ -2,7 +2,7 @@ version: '3.9'
 
 
 services:
-  db:
+  ryf-db:
     image: mysql:8.0
     container_name: ryf-db
     restart: always
@@ -17,9 +17,9 @@ services:
       - ./mysql_data:/var/lib/mysql
 
 
-  backend:
+  ryf-backend:
     build: .
-    container_name: backend
+    container_name: ryf-backend
     command: gunicorn config.wsgi:application -c /usr/src/config/gunicorn.config.py
     volumes:
       - ./backend/:/usr/src/app/
@@ -28,10 +28,10 @@ services:
     env_file:
       - ./.env
     depends_on:
-      - db
+      - ryf-db
 
 
-  nginx:
+  ryf-nginx:
     image: nginx:1.25
     container_name: ryf-nginx
     restart: always
@@ -43,5 +43,5 @@ services:
       # - ./certbot/www:/var/www/certbot/:ro
       # - ./certbot/conf/:/etc/nginx/ssl/:ro
     depends_on:
-      - backend
+      - ryf-backend
 

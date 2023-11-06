@@ -58,7 +58,7 @@
     in:fly={flyConfig}
   >
     <div class="card-image">
-      <img src="/characters/{character.portrait}" alt={character.portrait} />
+      <img src="/characters/{character.portrait_url}" alt={character.portrait_url} />
       <div class="portrait-box">
         <div class="name">
           {#if character.title}{character.title}<br />{/if}

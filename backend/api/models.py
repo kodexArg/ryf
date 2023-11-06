@@ -28,15 +28,14 @@ class Character(models.Model):
     nick_name = models.CharField(max_length=50, null=True)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    age = models.IntegerField()
+    age = models.IntegerField(null=True, blank=True)
     occupation = models.CharField(max_length=20)
     secret_occupation = models.CharField(max_length=20, null=True, blank=True)
     faction = models.CharField(max_length=20, null=True)
     biography = models.TextField(null=True, blank=True)
     background_secret = models.TextField(null=True, blank=True)
     location = models.CharField(max_length=20, null=True)
-    portrait_url = models.URLField(blank=True, null=True) 
-    appearance_description = models.TextField(blank=True)
+    portrait_filename = models.CharField(max_length=20, blank=True, null=True) 
 
     stats = models.OneToOneField(Stat, on_delete=models.CASCADE)
 
