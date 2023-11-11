@@ -5,7 +5,7 @@
 	export let text;
 	export let icon;
 	export let href = '/';
-	
+
 	let showText = false;
 	let timeout;
 
@@ -18,7 +18,7 @@
 			if (showText) {
 				timeout = setTimeout(() => {
 					showText = false;
-				}, 150);  // delay in ms.
+				}, 150); // delay in ms.
 			} else {
 				showText = true;
 			}
@@ -26,18 +26,23 @@
 	};
 </script>
 
-<div class="z-50" aria-hidden="true" on:mouseover={() => setVis(true)} on:mouseout={() => setVis()} >
+<div class="z-50" aria-hidden="true" on:mouseover={() => setVis(true)} on:mouseout={() => setVis()}>
 	<a
 		class="flex space-x-3 items-center justify-end p-1 shadow hover:shadow-primary-600 bg-primary-400 hover:bg-opacity-100 bg-opacity-50 rounded-lg overflow-hidden"
-		href={href}
+		{href}
 		role="button"
 	>
 		{#if showText}
-			<p in:fade={{duration: 200}} 
-                class="text-right text-primary-900 w-28 font-overpass-mono leading-4">
-		        {text}
+			<p
+				in:fade={{ duration: 200 }}
+				class="text-right text-primary-900 w-28 font-overpass-mono leading-4"
+			>
+				{text}
 			</p>
 		{/if}
-		<Icon svg={icon} class="w-10 h-10 p-1 bg-primary-900 text-primary-500 rounded-lg border border-black" />
+		<Icon
+			svg={icon}
+			class="w-10 h-10 p-1 bg-primary-900 text-primary-500 rounded-lg border border-black"
+		/>
 	</a>
 </div>

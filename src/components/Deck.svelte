@@ -1,48 +1,46 @@
 <script>
 	import { onMount, afterUpdate } from 'svelte';
 	import Card from '$comp/Card.svelte';
-  
+
 	let customCarousel;
 	export let characters;
-  
+
 	// local array to manage displayed characters
 	let displayedCharacters = [];
-  
+
 	async function* loadCharacters() {
-	  function delay(ms) {
-		return new Promise((resolve) => setTimeout(resolve, ms));
-	  }
-	  for (const character of characters) {
-		yield character;
-		await delay(100); // Delay between character renders
-	  }
+		function delay(ms) {
+			return new Promise((resolve) => setTimeout(resolve, ms));
+		}
+		for (const character of characters) {
+			yield character;
+			await delay(100); // Delay between character renders
+		}
 	}
 
- 
 	onMount(async () => {
-	  customCarousel.addEventListener('wheel', function (e) {
-		if (e.deltaY !== 0) {
-		  e.preventDefault();
-		  this.scrollLeft += e.deltaY;
-		}
-	  });
-  
-	  for await (const character of loadCharacters()) {
-		displayedCharacters = [...displayedCharacters, character];
-	  }
-	});
-  
-	afterUpdate(() => {
-	  if (displayedCharacters.length > 0) {
-		const customCarousel = document.querySelector('.custom-carousel');
-		const newScrollPosition = -customCarousel.clientWidth;
-		customCarousel.scrollTo({
-		  behavior: 'smooth'
+		customCarousel.addEventListener('wheel', function (e) {
+			if (e.deltaY !== 0) {
+				e.preventDefault();
+				this.scrollLeft += e.deltaY;
+			}
 		});
-	  }
+
+		for await (const character of loadCharacters()) {
+			displayedCharacters = [...displayedCharacters, character];
+		}
 	});
-  </script>
-  
+
+	afterUpdate(() => {
+		if (displayedCharacters.length > 0) {
+			const customCarousel = document.querySelector('.custom-carousel');
+			const newScrollPosition = -customCarousel.clientWidth;
+			customCarousel.scrollTo({
+				behavior: 'smooth'
+			});
+		}
+	});
+</script>
 
 <section>
 	<div class="custom-carousel" bind:this={customCarousel}>

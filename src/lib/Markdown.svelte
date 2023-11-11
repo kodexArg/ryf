@@ -1,19 +1,19 @@
 <!-- Markdown.svelte -->
 <script>
-    import { onMount } from 'svelte';
-    import MarkdownIt from 'markdown-it';
-  
-    export let md = ''; // This will take the name of the markdown file without the extension
-    export let extraClass = ''; // This allows passing a class to the container
-  
-    let markdownContent = ''; // This will hold the rendered HTML from the markdown
-    const mdParser = new MarkdownIt();
-  
-    onMount(async () => {
-      // Dynamically import the markdown file based on the `md` prop
-      const markdownFile = await import(`$docs/${md}.md?raw`);
-      markdownContent = mdParser.render(markdownFile.default);
-    });
+	import { onMount } from 'svelte';
+	import MarkdownIt from 'markdown-it';
+
+	export let md = ''; // This will take the name of the markdown file without the extension
+	export let extraClass = ''; // This allows passing a class to the container
+
+	let markdownContent = ''; // This will hold the rendered HTML from the markdown
+	const mdParser = new MarkdownIt();
+
+	onMount(async () => {
+		// Dynamically import the markdown file based on the `md` prop
+		const markdownFile = await import(`$docs/${md}.md?raw`);
+		markdownContent = mdParser.render(markdownFile.default);
+	});
 </script>
 
 <article class="markdown {extraClass}">
